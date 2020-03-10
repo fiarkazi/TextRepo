@@ -6,16 +6,21 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  Menus;
+  Menus,unit2;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    FindDialog1: TFindDialog;
+    FontDialog1: TFontDialog;
     MainMenu1: TMainMenu;
     Memo1: TMemo;
     mainMnu_Edit: TMenuItem;
+    OpenDialog1: TOpenDialog;
+    ReplaceDialog1: TReplaceDialog;
+    SaveDialog1: TSaveDialog;
     subMnu_Theme: TMenuItem;
     subMnu_selAll: TMenuItem;
     subMnu_Cut: TMenuItem;
@@ -37,10 +42,9 @@ type
     subMnu_Font: TMenuItem;
     mainMnu_File: TMenuItem;
     StatusBar1: TStatusBar;
-    ToggleBox1: TToggleBox;
+    procedure FormCreate(Sender: TObject);
     procedure mainMnu_SearchClick(Sender: TObject);
     procedure mainMnu_SpravClick(Sender: TObject);
-    procedure Memo1Change(Sender: TObject);
     procedure mainMnu_EditClick(Sender: TObject);
     procedure mainMnu_FileClick(Sender: TObject);
     procedure subMnu_AboutClick(Sender: TObject);
@@ -59,7 +63,6 @@ type
     procedure subMnu_selAllClick(Sender: TObject);
     procedure subMnu_SpravClick(Sender: TObject);
     procedure subMnu_ThemeClick(Sender: TObject);
-    procedure ToggleBox1Change(Sender: TObject);
   private
 
   public
@@ -68,6 +71,8 @@ type
 
 var
   Form1: TForm1;
+  txtFile:string;
+  file1:string;
 
 implementation
 
@@ -75,14 +80,38 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.Memo1Change(Sender: TObject);
+procedure memoLoad(txtFile: string);
+var
+tfile: TStringList;
+str: string;
 begin
+tfile:= TStringList.Create;
+tfile.LoadFromFile(txtFile);
+str:= tfile.Text;
+Form1.Memo1.Lines.Add(str);
+tfile.Free;
+end;
 
+procedure memoSave(txtFile: string);
+var
+tfile: TStringList;
+str: string;
+begin
+tfile:= TStringList.Create;
+str:=Form1.Memo1.text;
+tfile.Add(str);
+tfile.SaveToFile(txtFile);
+tfile.Free;
 end;
 
 procedure TForm1.mainMnu_SearchClick(Sender: TObject);
 begin
 
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Form1.Caption:= 'Текстовый Редактор';
 end;
 
 procedure TForm1.mainMnu_SpravClick(Sender: TObject);
@@ -102,7 +131,7 @@ end;
 
 procedure TForm1.subMnu_AboutClick(Sender: TObject);
 begin
-
+  Form2.Show;
 end;
 
 procedure TForm1.subMnu_CloseClick(Sender: TObject);
@@ -122,7 +151,7 @@ end;
 
 procedure TForm1.subMnu_ExitClick(Sender: TObject);
 begin
-
+  Application.Terminate;
 end;
 
 procedure TForm1.subMnu_FindClick(Sender: TObject);
@@ -132,7 +161,11 @@ end;
 
 procedure TForm1.subMnu_FontClick(Sender: TObject);
 begin
-
+  FontDialog1.Font:= memo1.Font;
+  if FontDialog1.Execute = true then
+     begin
+        Form1.Memo1.Font := FontDialog1.Font;
+     end;
 end;
 
 procedure TForm1.subMnu_NewClick(Sender: TObject);
@@ -142,7 +175,11 @@ end;
 
 procedure TForm1.subMnu_OpenClick(Sender: TObject);
 begin
-
+  if OpenDialog1.Execute then
+     begin
+        file1:=OpenDialog1.FileName;
+        memoLoad(file1);
+     end;
 end;
 
 procedure TForm1.subMnu_PasteClick(Sender: TObject);
@@ -157,7 +194,11 @@ end;
 
 procedure TForm1.subMnu_SaveAsClick(Sender: TObject);
 begin
-
+  if SaveDialog1.Execute then
+     begin
+        file1:=SaveDialog1.FileName;
+        memoSave(file1);
+     end;
 end;
 
 procedure TForm1.subMnu_SaveClick(Sender: TObject);
@@ -180,10 +221,6 @@ begin
 
 end;
 
-procedure TForm1.ToggleBox1Change(Sender: TObject);
-begin
-
-end;
 
 end.
 

@@ -1,0 +1,29 @@
+object Form2: TForm2
+  Left = 914
+  Height = 300
+  Top = 297
+  Width = 400
+  Caption = 'О программе'
+  ClientHeight = 300
+  ClientWidth = 400
+  DesignTimePPI = 120
+  LCLVersion = '2.0.0.4'
+  object Label1: TLabel
+    Left = 128
+    Height = 1
+    Top = 88
+    Width = 1
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 400
+    Align = alClient
+    Alignment = taCenter
+    Caption = 'Данная программа является текстовым редактором'#10'Выполнена студентами МАГУ '#10'по дисциплине "Основы разработки кроссплатформенных приложений" '#10'Преподаватель Олег Иванович Ляш.'#10'Работу выполнили: Кильдюшкин Даниил, Бражник Николай 4 БПМИ'#10'Год создания: 2020'#10'Все вопросы можно задать по адресу: '#10'kildyushkindr@gmail.com'
+    ParentColor = False
+    WordWrap = True
+  end
+end
