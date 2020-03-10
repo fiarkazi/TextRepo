@@ -1,22 +1,125 @@
 object Form1: TForm1
-  Left = 1154
-  Height = 300
-  Top = 333
-  Width = 400
+  Left = 1192
+  Height = 583
+  Top = 235
+  Width = 704
   Caption = 'Form1'
-  ClientHeight = 300
-  ClientWidth = 400
+  ClientHeight = 557
+  ClientWidth = 704
   DesignTimePPI = 120
+  Menu = MainMenu1
   LCLVersion = '2.0.0.4'
   object Memo1: TMemo
     Left = 0
-    Height = 325
-    Top = 0
-    Width = 415
+    Height = 552
+    Top = 31
+    Width = 616
     Lines.Strings = (
       'Memo1'
     )
     OnChange = Memo1Change
     TabOrder = 0
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 26
+    Top = 531
+    Width = 704
+    Panels = <>
+  end
+  object ToggleBox1: TToggleBox
+    Left = 608
+    Height = 31
+    Top = 0
+    Width = 94
+    Caption = 'ToggleBox1'
+    OnChange = ToggleBox1Change
+    TabOrder = 2
+  end
+  object MainMenu1: TMainMenu
+    left = 16
+    object mainMnu_File: TMenuItem
+      Caption = 'Файл'
+      OnClick = mainMnu_FileClick
+      object subMnu_New: TMenuItem
+        Caption = 'Новый'
+        OnClick = subMnu_NewClick
+      end
+      object subMnu_Open: TMenuItem
+        Caption = 'Открыть'
+        OnClick = subMnu_OpenClick
+      end
+      object subMnu_Close: TMenuItem
+        Caption = 'Закрыть'
+        OnClick = subMnu_CloseClick
+      end
+      object subMnu_Save: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = subMnu_SaveClick
+      end
+      object subMnu_SaveAs: TMenuItem
+        Caption = 'Сохранить как'
+        OnClick = subMnu_SaveAsClick
+      end
+      object subMnu_Exit: TMenuItem
+        Caption = 'Выход'
+        OnClick = subMnu_ExitClick
+      end
+    end
+    object mainMnu_Edit: TMenuItem
+      Caption = 'Правка'
+      OnClick = mainMnu_EditClick
+      object subMnu_selAll: TMenuItem
+        Caption = 'Выделить все'
+        OnClick = subMnu_selAllClick
+      end
+      object subMnu_Cut: TMenuItem
+        Caption = 'Вырезать'
+        OnClick = subMnu_CutClick
+      end
+      object subMnu_Copy: TMenuItem
+        Caption = 'Копировать'
+        OnClick = subMnu_CopyClick
+      end
+      object subMnu_Paste: TMenuItem
+        Caption = 'Вставить'
+        OnClick = subMnu_PasteClick
+      end
+    end
+    object mainMnu_View: TMenuItem
+      Caption = 'Вид'
+      object subMnu_Font: TMenuItem
+        Caption = 'Шрифт'
+        OnClick = subMnu_FontClick
+      end
+      object subMnu_Theme: TMenuItem
+        Caption = 'Тема '
+        OnClick = subMnu_ThemeClick
+      end
+    end
+    object mainMnu_Search: TMenuItem
+      Caption = 'Поиск'
+      OnClick = mainMnu_SearchClick
+      object subMnu_Find: TMenuItem
+        Caption = 'Найти'
+        OnClick = subMnu_FindClick
+      end
+      object subMnu_Replace: TMenuItem
+        Caption = 'Заменить'
+        OnClick = subMnu_ReplaceClick
+      end
+    end
+    object mainMnu_Sprav: TMenuItem
+      Caption = 'Справка'
+      OnClick = mainMnu_SpravClick
+      object subMnu_Sprav: TMenuItem
+        Caption = 'Справка'
+        OnClick = subMnu_SpravClick
+      end
+      object subMnu_About: TMenuItem
+        Caption = 'О программе'
+        OnClick = subMnu_AboutClick
+      end
+    end
   end
 end
