@@ -1,7 +1,12 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: thelpform.label1.caption
+msgid "Label1"
+msgstr ""
+
 #: tmainform.menuabout.caption
+msgctxt "tmainform.menuabout.caption"
 msgid "О программе"
 msgstr ""
 
@@ -177,5 +182,24 @@ msgstr ""
 
 #: unit1.rwarning
 msgid "Предупреждение!"
+msgstr ""
+
+#: unit2.rabout
+msgctxt "unit2.rabout"
+msgid "О программе"
+msgstr ""
+
+#: unit2.raboutcaption
+msgctxt "unit2.raboutcaption"
+msgid "О программе"
+msgstr ""
+
+#: unit2.rspravka
+msgid "В скором времени здесь будет отображаться справка"
+msgstr ""
+
+#: unit2.rspravkacaption
+msgctxt "unit2.rspravkacaption"
+msgid "Справка"
 msgstr ""
 

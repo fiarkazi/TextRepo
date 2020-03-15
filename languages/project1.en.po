@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-15 22:09+0000\n"
-"PO-Revision-Date: 2020-03-15 22:22+0000\n"
+"PO-Revision-Date: 2020-03-15 22:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: No linguistic content\n"
-"Language: zxx\n"
+"Language: en\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,12 @@ msgstr ""
 "X-Loco-Parser: loco_parse_po\n"
 "X-Generator: Loco https://localise.biz/"
 
+#: thelpform.label1.caption
+msgid "Label1"
+msgstr ""
+
 #: tmainform.menuabout.caption
+msgctxt "tmainform.menuabout.caption"
 msgid "О программе"
 msgstr "About programm"
 
@@ -192,3 +197,22 @@ msgstr "Save"
 #: unit1.rwarning
 msgid "Предупреждение!"
 msgstr "Warning!"
+
+#: unit2.rabout
+msgctxt "unit2.rabout"
+msgid "О программе"
+msgstr "About programm"
+
+#: unit2.raboutcaption
+msgctxt "unit2.raboutcaption"
+msgid "О программе"
+msgstr "About programm"
+
+#: unit2.rspravka
+msgid "В скором времени здесь будет отображаться справка"
+msgstr "Help will be displayed here shortly"
+
+#: unit2.rspravkacaption
+msgctxt "unit2.rspravkacaption"
+msgid "Справка"
+msgstr "Help"

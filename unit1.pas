@@ -229,6 +229,7 @@ begin
   SetDefaultLang('en');
   StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
   if MainForm.Caption = 'Новый документ' then MainForm.Caption:= rNewDocument;
+  if StatusBar1.Panels.Items[1].Text = 'Изменен' then StatusBar1.Panels.Items[1].Text:= rEdited;
 end;
 
 procedure TMainForm.MenuItem3Click(Sender: TObject);
@@ -236,6 +237,7 @@ begin
  SetDefaultLang('ru');
  StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
  if MainForm.Caption = 'New document' then MainForm.Caption:= rNewDocument;
+ if StatusBar1.Panels.Items[1].Text = 'Edited' then StatusBar1.Panels.Items[1].Text:= rEdited;
 end;
 
 procedure TMainForm.menuThemeDarknessClick(Sender: TObject);

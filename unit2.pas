@@ -22,6 +22,14 @@ type
 
   end;
   procedure RunHelpForm(message: String);
+
+
+  resourcestring
+    rSpravka = 'В скором времени здесь будет отображаться справка';
+    rAbout = 'О программе';
+    rSpravkaCaption = 'Справка';
+    rAboutCaption = 'О программе';
+
 var
   HelpForm: THelpForm;
   helpmess: string;
@@ -40,9 +48,15 @@ end;
 procedure THelpForm.FormCreate(Sender: TObject);
 begin
   if helpmess = 'help' then
-     Label1.Caption:= 'В скором времени здесь будет отображаться справка'
+     begin
+     Label1.Caption:= rSpravka;
+     HelpForm.Caption:= rSpravkaCaption;
+     end
   else if helpmess = 'about' then
-     Label1.Caption:= 'О программе';
+     begin
+     Label1.Caption:= rAbout;
+     HelpForm.Caption:= rAboutCaption;
+     end;
 end;
 
 procedure RunHelpForm(message: String);
