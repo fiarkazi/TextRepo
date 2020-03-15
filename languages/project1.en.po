@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-15 22:09+0000\n"
+"PO-Revision-Date: 2020-03-15 22:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: No linguistic content\n"
+"Language: zxx\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: ru_RU\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: tmainform.menuabout.caption
+msgid "О программе"
+msgstr "About programm"
+
+#: tmainform.menuclosefile.caption
+msgid "Закрыть"
+msgstr "Close"
+
+#: tmainform.menucopy.caption
+msgid "Копировать"
+msgstr "Copy"
+
+#: tmainform.menucut.caption
+msgid "Вырезать"
+msgstr "Cut"
+
+#: tmainform.menudocumentation.caption
+msgctxt "tmainform.menudocumentation.caption"
+msgid "Справка"
+msgstr "Help"
+
+#: tmainform.menuedit.caption
+msgid "Правка"
+msgstr "Edit"
+
+#: tmainform.menuexit.caption
+msgid "Выход"
+msgstr "Exit"
+
+#: tmainform.menufile.caption
+msgctxt "tmainform.menufile.caption"
+msgid "Файл"
+msgstr "File"
+
+#: tmainform.menufind.caption
+msgid "Поиск"
+msgstr "Search"
+
+#: tmainform.menufont.caption
+msgid "Шрифт"
+msgstr "Font"
+
+#: tmainform.menuhelp.caption
+msgctxt "tmainform.menuhelp.caption"
+msgid "Справка"
+msgstr "Help"
+
+#: tmainform.menuitem1.caption
+msgid "Язык"
+msgstr "Language"
+
+#: tmainform.menuitem19.caption
+msgid "Заменить"
+msgstr "Replace"
+
+#: tmainform.menuitem2.caption
+msgid "Английский"
+msgstr "English"
+
+#: tmainform.menuitem3.caption
+msgid "Русский"
+msgstr "Russian"
+
+#: tmainform.menunewfile.caption
+msgid "Новый"
+msgstr "New"
+
+#: tmainform.menuopenfile.caption
+msgid "Открыть"
+msgstr "Open"
+
+#: tmainform.menupaste.caption
+msgid "Вставить"
+msgstr "Paste"
+
+#: tmainform.menusaveasfile.caption
+msgid "Сохранить как"
+msgstr "Save as"
+
+#: tmainform.menusavefile.caption
+msgctxt "tmainform.menusavefile.caption"
+msgid "Сохранить"
+msgstr "Save"
+
+#: tmainform.menusearch.caption
+msgid "Найти"
+msgstr "Find"
+
+#: tmainform.menuselectall.caption
+msgid "Выделить все"
+msgstr "Select All"
+
+#: tmainform.menusyntax.caption
+msgid "Синтакс"
+msgstr "Syntax"
+
+#: tmainform.menusyntaxcss.caption
+msgid "CSS"
+msgstr ""
+
+#: tmainform.menusyntaxhtml.caption
+msgid "HTML"
+msgstr ""
+
+#: tmainform.menusyntaxjscript.caption
+msgid "Javascript"
+msgstr ""
+
+#: tmainform.menusyntaxpascal.caption
+msgid "Pascal"
+msgstr ""
+
+#: tmainform.menusyntaxphp.caption
+msgid "PHP"
+msgstr ""
+
+#: tmainform.menutheme.caption
+msgid "Тема оформления"
+msgstr "Theme"
+
+#: tmainform.menuthemedarkness.caption
+msgid "Мрак"
+msgstr "Darkness"
+
+#: tmainform.menuthemespringcolors.caption
+msgid "Краски весны"
+msgstr "Spring colors"
+
+#: tmainform.menuthemestandart.caption
+msgid "Стандарт"
+msgstr "Standart"
+
+#: tmainform.menuview.caption
+msgid "Вид"
+msgstr "View"
+
+#: tmainform.statusbar1.panels[3].text
+msgid "Time"
+msgstr ""
+
+#: unit1.redited
+msgid "Изменен"
+msgstr "Edited"
+
+#: unit1.rfile
+msgctxt "unit1.rfile"
+msgid "Файл"
+msgstr "File"
+
+#: unit1.rfilednotsaved
+msgid "не был сохранен. Сохранить?"
+msgstr "was not saved"
+
+#: unit1.rlines
+msgid "Строка: "
+msgstr "Line: "
+
+#: unit1.rnewdocument
+msgid "Новый документ"
+msgstr "New document"
+
+#: unit1.rnotsavefile
+msgid "Не сохранять"
+msgstr "Don't save"
+
+#: unit1.rsaved
+msgid "Сохранен"
+msgstr "Saved"
+
+#: unit1.rsavefile
+msgctxt "unit1.rsavefile"
+msgid "Сохранить"
+msgstr "Save"
+
+#: unit1.rwarning
+msgid "Предупреждение!"
+msgstr "Warning!"

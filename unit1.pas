@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, LCLType, Dialogs, Menus, ComCtrls,
   ExtCtrls, SynEdit, SynHighlighterPas, SynHighlighterHTML, SynHighlighterCss,
-  SynHighlighterPHP, SynHighlighterJScript;
+  SynHighlighterPHP, SynHighlighterJScript, DefaultTranslator, LCLTranslator;
 
 type
 
@@ -20,6 +20,9 @@ type
     menuFile: TMenuItem;
     menuCut: TMenuItem;
     menuCopy: TMenuItem;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
     menuThemeStandart: TMenuItem;
     menuThemeSpringColors: TMenuItem;
     menuThemeDarkness: TMenuItem;
@@ -68,6 +71,8 @@ type
     procedure menuCutClick(Sender: TObject);
     procedure menuDocumentationClick(Sender: TObject);
     procedure menuFontClick(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
     procedure menuThemeDarknessClick(Sender: TObject);
     procedure menuThemeSpringColorsClick(Sender: TObject);
     procedure menuPasteClick(Sender: TObject);
@@ -98,6 +103,17 @@ type
 
   end;
 
+resourcestring
+  rNewDocument = 'Новый документ';
+  rLines = 'Строка: ';
+  rSaved = 'Сохранен';
+  rEdited = 'Изменен';
+  rSaveFile = 'Сохранить';
+  rNotSaveFile = 'Не сохранять';
+  rWarning = 'Предупреждение!';
+  rFile = 'Файл';
+  rFiledNotSaved = 'не был сохранен. Сохранить?';
+
 var
   MainForm: TMainForm;
   FileName: String;
@@ -126,14 +142,14 @@ procedure TMainForm.menuNewFileClick(Sender: TObject);
 begin
   if FileFlag = false then
     begin
-      case QuestionDlg('Предупреждение!', 'Файл' + filename +' не был сохранен. Сохранить?', mtCustom, [mrYes, 'Сохранить', mrNo, 'Не сохранять'], '') of
+      case QuestionDlg(rWarning, rFile + filename + rFiledNotSaved, mtCustom, [mrYes, rSaveFile, mrNo, rNotSaveFile], '') of
          mrYes: begin
            FileSave();
          end;
       end;
     end;
   SynEdit1.Lines.Clear;
-  MainForm.Caption:= 'Новый документ';
+  MainForm.Caption:= rNewDocument;
   filename:= '';
   FileFlag:= True;
   StatusBar1.Panels.Items[1].Text:= '';
@@ -153,21 +169,21 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
   SynEdit1.Font.Color:= clBlack;
   SynEdit1.Lines.Clear;
-  MainForm.Caption:= 'Новый документ';
+  MainForm.Caption:= rNewDocument;
   FileFlag:= True;
-  StatusBar1.Panels.Items[0].Text:= 'Строка: ' + IntToStr(SynEdit1.CaretY);
+  StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
 end;
 
 procedure TMainForm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  StatusBar1.Panels.Items[0].Text:= 'Строка: ' + IntToStr(SynEdit1.CaretY);
+  StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
 end;
 
 procedure TMainForm.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
   );
 begin
-StatusBar1.Panels.Items[0].Text:= 'Строка: ' + IntToStr(SynEdit1.CaretY);
+StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
 end;
 
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -206,6 +222,20 @@ begin
  if FontDialog1.Execute then
      SynEdit1.Font.Assign(FontDialog1.Font);
  SynEdit1.SetFocus;
+end;
+
+procedure TMainForm.MenuItem2Click(Sender: TObject);
+begin
+  SetDefaultLang('en');
+  StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
+  if MainForm.Caption = 'Новый документ' then MainForm.Caption:= rNewDocument;
+end;
+
+procedure TMainForm.MenuItem3Click(Sender: TObject);
+begin
+ SetDefaultLang('ru');
+ StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
+ if MainForm.Caption = 'New document' then MainForm.Caption:= rNewDocument;
 end;
 
 procedure TMainForm.menuThemeDarknessClick(Sender: TObject);
@@ -280,7 +310,7 @@ begin
     end
   else
     begin
-      case QuestionDlg('Предупреждение!', 'Файл' + filename +' не был сохранен. Сохранить?', mtCustom, [mrYes, 'Сохранить', mrNo, 'Не сохранять'], '') of
+      case QuestionDlg(rWarning, rFile + filename + rFiledNotSaved, mtCustom, [mrYes, rSaveFile, mrNo, rNotSaveFile], '') of
          mrYes: begin
            FileSave();
          end;
@@ -315,7 +345,7 @@ begin
                 Writeln(tempfile, SynEdit1.Lines[i]);
             CloseFile(tempfile);
             FileFlag:= True;
-            StatusBar1.Panels.Items[1].Text:= 'Сохранен';
+            StatusBar1.Panels.Items[1].Text:= rSaved;
         end
       else FileSaveAs();
     end
@@ -331,14 +361,14 @@ begin
       MainForm.Caption:= filename;
       SynEdit1.Lines.SaveToFile(filename);
     end;
- StatusBar1.Panels.Items[1].Text:= 'Сохранен';
+ StatusBar1.Panels.Items[1].Text:= rSaved;
 end;
 
 procedure TMainForm.SynEdit1Change(Sender: TObject);
 begin
   FileFlag:= false;
-  StatusBar1.Panels.Items[1].Text:= 'Изменен';
-  StatusBar1.Panels.Items[0].Text:= 'Строка: ' + IntToStr(SynEdit1.CaretY);
+  StatusBar1.Panels.Items[1].Text:= rEdited;
+  StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
 
 end;
 
@@ -346,7 +376,7 @@ procedure TMainForm.AppClose();
 begin
 if FileFlag = false then
  begin
-   case QuestionDlg('Предупреждение!', 'Файл не был сохранен!', mtCustom, [mrYes, 'Сохранить', mrNo, 'Не сохранять'], '') of
+   case QuestionDlg(rWarning, rFile + filename + rFiledNotSaved, mtCustom, [mrYes, rSaveFile, mrNo, rNotSaveFile], '') of
    mrYes: begin
      FileSave();
      Application.Terminate;
@@ -364,7 +394,7 @@ end;
 
 procedure TMainForm.SynEdit1Click(Sender: TObject);
 begin
-     StatusBar1.Panels.Items[0].Text:= 'Строка: ' + IntToStr(SynEdit1.CaretY);
+     StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
 end;
 
 procedure TMainForm.Timer1Timer(Sender: TObject);
