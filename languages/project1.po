@@ -11,8 +11,16 @@ msgctxt "tform2.button2.caption"
 msgid "Заменить"
 msgstr ""
 
+#: tform2.caption
+msgid "Form2"
+msgstr ""
+
 #: thelpform.label1.caption
 msgid "Label1"
+msgstr ""
+
+#: tmainform.caption
+msgid "MainForm"
 msgstr ""
 
 #: tmainform.menuabout.caption

@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Loco-Source-Locale: ru_RU\n"
 "X-Loco-Parser: loco_parse_po\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco https://localise.biz/\n"
 
 #: tform2.button1.caption
 msgctxt "tform2.button1.caption"
@@ -25,10 +25,17 @@ msgctxt "tform2.button2.caption"
 msgid "Заменить"
 msgstr "Replace"
 
+#: tform2.caption
+msgid "Form2"
+msgstr ""
+
 #: thelpform.label1.caption
 msgid "Label1"
 msgstr ""
 
+#: tmainform.caption
+msgid "MainForm"
+msgstr ""
 
 #: tmainform.menuabout.caption
 msgctxt "tmainform.menuabout.caption"
@@ -233,3 +240,4 @@ msgstr "Find and replace"
 #: unit4.rnomatchescaption
 msgid "Нет совпадений!"
 msgstr "No matches!"
+
