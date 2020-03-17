@@ -3,11 +3,11 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-15 22:09+0000\n"
-"PO-Revision-Date: 2020-03-15 22:45+0000\n"
+"PO-Revision-Date: 2020-03-17 17:26+0000\n"
 "Last-Translator: \n"
-"Language-Team: No linguistic content\n"
+"Language-Team: English\n"
 "Language: en\n"
-"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,9 +15,20 @@ msgstr ""
 "X-Loco-Parser: loco_parse_po\n"
 "X-Generator: Loco https://localise.biz/"
 
+#: tform2.button1.caption
+msgctxt "tform2.button1.caption"
+msgid "Найти"
+msgstr "Find"
+
+#: tform2.button2.caption
+msgctxt "tform2.button2.caption"
+msgid "Заменить"
+msgstr "Replace"
+
 #: thelpform.label1.caption
 msgid "Label1"
 msgstr ""
+
 
 #: tmainform.menuabout.caption
 msgctxt "tmainform.menuabout.caption"
@@ -72,7 +83,8 @@ msgid "Язык"
 msgstr "Language"
 
 #: tmainform.menuitem19.caption
-msgid "Заменить"
+msgctxt "tmainform.menuitem19.caption"
+msgid "Найти и заменить"
 msgstr "Replace"
 
 #: tmainform.menuitem2.caption
@@ -103,10 +115,6 @@ msgstr "Save as"
 msgctxt "tmainform.menusavefile.caption"
 msgid "Сохранить"
 msgstr "Save"
-
-#: tmainform.menusearch.caption
-msgid "Найти"
-msgstr "Find"
 
 #: tmainform.menuselectall.caption
 msgid "Выделить все"
@@ -216,3 +224,12 @@ msgstr "Help will be displayed here shortly"
 msgctxt "unit2.rspravkacaption"
 msgid "Справка"
 msgstr "Help"
+
+#: unit4.rfindandreplaccaption
+msgctxt "unit4.rfindandreplaccaption"
+msgid "Найти и заменить"
+msgstr "Find and replace"
+
+#: unit4.rnomatchescaption
+msgid "Нет совпадений!"
+msgstr "No matches!"

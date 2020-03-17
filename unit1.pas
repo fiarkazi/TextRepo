@@ -32,7 +32,6 @@ type
     menuFont: TMenuItem;
     menuTheme: TMenuItem;
     menuFind: TMenuItem;
-    menuSearch: TMenuItem;
     MenuItem19: TMenuItem;
     menuNewFile: TMenuItem;
     menuHelp: TMenuItem;
@@ -71,6 +70,7 @@ type
     procedure menuCutClick(Sender: TObject);
     procedure menuDocumentationClick(Sender: TObject);
     procedure menuFontClick(Sender: TObject);
+    procedure MenuItem19Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure menuThemeDarknessClick(Sender: TObject);
@@ -103,6 +103,8 @@ type
 
   end;
 
+  function ExtensionSearch(temp: String): String;
+
 resourcestring
   rNewDocument = 'Новый документ';
   rLines = 'Строка: ';
@@ -121,7 +123,7 @@ var
 
 implementation
 
-uses Unit2;
+uses Unit2, Unit4;
 
 {$R *.lfm}
 
@@ -224,6 +226,11 @@ begin
  SynEdit1.SetFocus;
 end;
 
+procedure TMainForm.MenuItem19Click(Sender: TObject);
+begin
+  Form2.Show();
+end;
+
 procedure TMainForm.MenuItem2Click(Sender: TObject);
 begin
   SetDefaultLang('en');
@@ -295,10 +302,10 @@ procedure TMainForm.menuSyntaxCssClick(Sender: TObject);
 begin
   SynEdit1.Highlighter:= SynCSSSyn1;
   StatusBar1.Panels.Items[2].Text:= 'CSS';
-
 end;
 
 procedure TMainForm.menuOpenFileClick(Sender: TObject);
+var temp: String;
 begin
   openDialog1.Filter:= 'All ext|*|Text files|*.txt|Pascal|*.pas|HTML|*.html|CSS|*.css|PHP|*.php|JavaScript|*.js';
   if FileFlag = True then
@@ -322,6 +329,34 @@ begin
             filename:= OpenDialog1.FileName;
             SynEdit1.Lines.LoadFromFile(filename);
             MainForm.Caption:= filename;
+       end;
+    end;
+
+    temp:= ExtensionSearch(filename);
+    case temp of
+       'pas': begin
+         SynEdit1.Highlighter:= SynPasSyn1;
+         StatusBar1.Panels.Items[2].Text:= 'Pascal';
+       end;
+       'js': begin
+         SynEdit1.Highlighter:= SynJScriptSyn1;
+         StatusBar1.Panels.Items[2].Text:= 'JScript';
+       end;
+       'html': begin
+         SynEdit1.Highlighter:= SynHTMLSyn1;
+         StatusBar1.Panels.Items[2].Text:= 'HTML';
+       end;
+       'css': begin
+         SynEdit1.Highlighter:= SynCSSSyn1;
+         StatusBar1.Panels.Items[2].Text:= 'CSS';
+       end;
+       'txt': begin
+         StatusBar1.Panels.Items[2].Text:= 'txt';
+         SynEdit1.Highlighter:= nil;
+       end;
+       'php': begin
+         SynEdit1.Highlighter:= SynPHPSyn1;
+         StatusBar1.Panels.Items[2].Text:= 'PHP';
        end;
     end;
 end;
@@ -371,8 +406,8 @@ begin
   FileFlag:= false;
   StatusBar1.Panels.Items[1].Text:= rEdited;
   StatusBar1.Panels.Items[0].Text:= rLines + IntToStr(SynEdit1.CaretY);
-
 end;
+
 
 procedure TMainForm.AppClose();
 begin
@@ -409,5 +444,11 @@ begin
   StatusBar1.Panels.Items[3].Text:= IntToStr(hr) + ':' + IntToStr(min);
 end;
 
+function ExtensionSearch(temp: String): String;
+var x1: integer;
+  begin
+  x1:= pos('.', temp);
+  ExtensionSearch:= Copy(temp, x1+1);
+  end;
 end.
 

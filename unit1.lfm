@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 378
+  Left = 277
   Height = 600
-  Top = 70
+  Top = 40
   Width = 800
   Caption = 'MainForm'
   ClientHeight = 580
@@ -654,12 +654,9 @@ object MainForm: TMainForm
     end
     object menuFind: TMenuItem
       Caption = 'Поиск'
-      object menuSearch: TMenuItem
-        Caption = 'Найти'
-        OnClick = menuSearchClick
-      end
       object MenuItem19: TMenuItem
-        Caption = 'Заменить'
+        Caption = 'Найти и заменить'
+        OnClick = MenuItem19Click
       end
     end
     object menuHelp: TMenuItem

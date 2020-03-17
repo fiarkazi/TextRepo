@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="E:\Programms\lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1331391477"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiE:\projects\multyprogram\lazarus\editor_v5\lib\x86_64-win64 -FuE:\Programms\lazarus\components\synedit\units\x86_64-win64\win32 -FuE:\Programms\lazarus\lcl\units\x86_64-win64\win32 -FuE:\Programms\lazarus\lcl\units\x86_64-win64 -FuE:\Programms\lazarus\components\lazutils\lib\x86_64-win64 -FuE:\Programms\lazarus\packager\units\x86_64-win64 -FuE:\projects\multyprogram\lazarus\editor_v5\ -FUE:\projects\multyprogram\lazarus\editor_v5\lib\x86_64-win64\ -FEE:\projects\multyprogram\lazarus\editor_v5\ -oE:\projects\multyprogram\lazarus\editor_v5\project1.exe -dLCL -dLCLwin32 project1.lpr"/>
+</CONFIG>

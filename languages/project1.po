@@ -1,6 +1,16 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: tform2.button1.caption
+msgctxt "tform2.button1.caption"
+msgid "Найти"
+msgstr ""
+
+#: tform2.button2.caption
+msgctxt "tform2.button2.caption"
+msgid "Заменить"
+msgstr ""
+
 #: thelpform.label1.caption
 msgid "Label1"
 msgstr ""
@@ -58,7 +68,8 @@ msgid "Язык"
 msgstr ""
 
 #: tmainform.menuitem19.caption
-msgid "Заменить"
+msgctxt "tmainform.menuitem19.caption"
+msgid "Найти и заменить"
 msgstr ""
 
 #: tmainform.menuitem2.caption
@@ -88,10 +99,6 @@ msgstr ""
 #: tmainform.menusavefile.caption
 msgctxt "tmainform.menusavefile.caption"
 msgid "Сохранить"
-msgstr ""
-
-#: tmainform.menusearch.caption
-msgid "Найти"
 msgstr ""
 
 #: tmainform.menuselectall.caption
@@ -201,5 +208,14 @@ msgstr ""
 #: unit2.rspravkacaption
 msgctxt "unit2.rspravkacaption"
 msgid "Справка"
+msgstr ""
+
+#: unit4.rfindandreplaccaption
+msgctxt "unit4.rfindandreplaccaption"
+msgid "Найти и заменить"
+msgstr ""
+
+#: unit4.rnomatchescaption
+msgid "Нет совпадений!"
 msgstr ""
 
