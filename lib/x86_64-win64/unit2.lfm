@@ -1,0 +1,22 @@
+object HelpForm: THelpForm
+  Left = 830
+  Height = 240
+  Top = 184
+  Width = 320
+  Align = alClient
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 320
+    Align = alClient
+    Caption = 'Label1'
+    ParentColor = False
+    OnClick = Label1Click
+  end
+end
